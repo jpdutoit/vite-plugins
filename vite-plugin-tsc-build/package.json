@@ -1,0 +1,22 @@
+{
+  "name": "vite-plugin-tsc-build",
+  "version": "0.1.0",
+  "description": "A Vite plugin for doing your production build using tsc instead of esbuild",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  }
+}
