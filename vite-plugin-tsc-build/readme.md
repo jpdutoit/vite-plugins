@@ -1,6 +1,6 @@
 # vite-plugin-tsc-build
 
-A Vite plugin that uses the TypeScript compiler instead of esbuild to build your TypeScript project. This plugin is especially useful when your project uses specific TypeScript features that are not fully supported by esbuild, such as:
+A Vite plugin that uses the TypeScript compiler instead of esbuild to build your TypeScript project. This plugin is especially useful when your project uses specific TypeScript features that are not fully supported by Vite, such as:
 
 - Support for isolatedModules = false
 - Implicit type-only imports
