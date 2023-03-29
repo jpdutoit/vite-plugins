@@ -1,7 +1,12 @@
 {
   "name": "vite-plugin-tsc-build",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Vite plugin for creating your production build using tsc instead of esbuild",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpdutoit/vite-plugins.git",
+    "directory": "vite-plugin-tsc-build"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
