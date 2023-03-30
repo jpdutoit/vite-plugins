@@ -55,8 +55,8 @@ function runTscBuild(tscArgs: string[]) {
     });
 
     tsc.on("close", (code) => {
-      if (stdout.length > 0) console.log(stderr.join(""));
-      if (stderr.length > 0) console.error(stderr.join(""));
+      if (stdout.length > 0) console.log(stdout.join(""));
+      if (stderr.length > 0) console.log(stderr.join(""));
       if (code === 0) {
         resolve();
       } else {
