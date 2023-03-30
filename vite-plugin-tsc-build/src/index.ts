@@ -31,12 +31,25 @@ export default function tscBuildPlugin({
       const jsFilename = convertToJSFileExtension(filename);
       const outFilename = rewriteSrcToOutDir(jsFilename);
 
-      if (!fs.existsSync(outFilename)) return null;
+      const code = maybeReadFileSync(outFilename);
+      if (!code) {
+        return null;
+      }
 
-      const compiledCode = fs.readFileSync(outFilename, "utf-8");
-      return { code: compiledCode, map: null };
+      return {
+        code,
+        map: maybeReadFileSync(outFilename + ".map"),
+      };
     },
   };
+}
+
+function maybeReadFileSync(filename: string) {
+  try {
+    return fs.readFileSync(filename, "utf-8");
+  } catch (_) {
+    return undefined;
+  }
 }
 
 function runTscBuild(tscArgs: string[]) {
