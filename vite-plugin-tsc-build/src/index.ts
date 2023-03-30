@@ -33,6 +33,12 @@ export default function tscBuildPlugin({
 
       const code = maybeReadFileSync(outFilename);
       if (!code) {
+        console.debug(
+          `vite-plugin-tsc-build: Could not find file './${path.relative(
+            process.cwd(),
+            outFilename
+          )}'`
+        );
         return null;
       }
 
